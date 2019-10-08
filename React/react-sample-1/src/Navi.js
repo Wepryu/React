@@ -36,7 +36,7 @@ export default class Navi extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/Hakkinda/">Hakkında</NavLink>
+                <NavLink href="/Hakkinda/">{this.props.ornek}</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/Teknoloji/">Teknoloji</NavLink>

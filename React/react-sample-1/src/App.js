@@ -7,13 +7,13 @@ import Context from "./Context";
 function App() {
   return (
     <div>
+      {/* props ile calismalar */}
+      <Navi ornek ="Bu bir ornek navi yazidir"></Navi>
       <Container>
         <Row xs="12">
           <Col xs="12">
-            <Navi></Navi>
-          </Col>
-          <Col xs="12">
-            <Context></Context>
+            {/* props ile calismalar */}
+            <Context ornek = "bu bir Context ornek yazidir."></Context>
           </Col>
         </Row>
       </Container>
