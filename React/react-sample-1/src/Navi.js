@@ -30,31 +30,33 @@ export default class Navi extends Component {
   }
   render() {
     return (
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Oğuzhan KOCAKAŞ</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/Hakkinda/">{this.props.ornek}</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/Teknoloji/">Teknoloji</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Blog
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Blog Konu 1</DropdownItem>
-                  <DropdownItem>Blog Konu 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Önemli 1</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-          </Collapse>
-        </Navbar>
+      <Navbar color="light" light expand="md">
+        {/*Props ve Encapsulations çalışmalar */}
+        <NavbarBrand href="/">{this.props.info.menu_1}</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              {/*Props ve Encapsulations çalışmalar */}
+              <NavLink href="/Hakkinda/">{this.props.info.menu_2}</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/Teknoloji/">{this.props.info.menu_3}</NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                {this.props.info.menu_4[0]}
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem> {this.props.info.menu_4[1]}</DropdownItem>
+                <DropdownItem> {this.props.info.menu_4[2]}</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem> {this.props.info.menu_4[3]}</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
+        </Collapse>
+      </Navbar>
       // <div>
       //     <h1>  Üst menü barın oldğu yer</h1>
       // </div>
