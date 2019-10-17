@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 
 export default class Context extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       stateKullanimi: [
-        { lstId: 0, lstName: "state kullanım örnek list0" },
         { lstId: 1, lstName: "state kullanım örnek list1" },
-        { lstId: 2, lstName: "state kullanım örnek list" }
-      ]
+        { lstId: 2, lstName: "state kullanım örnek list2" },
+        { lstId: 3, lstName: "state kullanım örnek list3" }
+      ],
+      eventsCalisma: ""
     };
+  changeContextField = (changes)=>{
+    this.setState({eventsCalisma: changes.lstId + ". buton elemanına tıklanıldı"})
   }
   render() {
     return (
@@ -21,10 +22,12 @@ export default class Context extends Component {
         {/*Props ve Encapsulations ile ilgili çalışmalar */}
         <h5>{this.props.info.icerik_1}</h5>
 
-        {/*State kullanımı asagidaki gibidir. */}
-        <h6>{this.state.stateKullanimi.map(lstContext=>(
-            <p>içerikler : {lstContext.lstName}</p>
-        ))}</h6>
+        {/*State kullanimi asagidaki gibidir. */}
+        {this.state.stateKullanimi.map(lstContext=>(
+            /*Events kullanimi asagidir */
+            <button key={lstContext.lstId} onClick={()=> this.changeContextField(lstContext)}>içerikler : {lstContext.lstName}</button>
+        ))}
+        <h5>{this.state.eventsCalisma}</h5>
       </div>
     );
   }
