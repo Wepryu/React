@@ -30,6 +30,8 @@ export default class Navi extends Component {
   }
   render() {
     return (
+
+      
       <Navbar color="light" light expand="md">
         {/*Props ve Encapsulations çalışmalar */}
         <NavbarBrand href="/">{this.props.info.menu_1}</NavbarBrand>
