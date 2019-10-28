@@ -3,7 +3,15 @@ import Navi from "./Navi";
 import { Container, Row, Col } from "reactstrap";
 
 import Context from "./Context";
+import SecondComp from "./SecondComp";
 export default class App extends Component {
+  state = { eventsCalisma: "" };
+  changeContextField = changes => {
+    this.setState({
+      eventsCalisma: changes.lstId + ". buton elemanına tıklanıldı"
+    });
+  };
+
   /*Props ve Encapsulations çalışmalar */
   render() {
     let naviInfo = {
@@ -28,7 +36,16 @@ export default class App extends Component {
               {/* props ile calismalar */}
               {/* <Context ornek = "bu bir Context ornek yazidir."></Context> */}
               {/*Props ve Encapsulations çalışmalar */}
-              <Context info={contextInfo}></Context>
+              <Context
+                changeState={this.state}
+                changeContextField={this.changeContextField}
+                info={contextInfo}
+              ></Context>
+            </Col>
+            <Col xs="12">
+              <SecondComp >
+
+              </SecondComp>
             </Col>
           </Row>
         </Container>
