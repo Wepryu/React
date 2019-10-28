@@ -19,8 +19,8 @@ const dataSource = [
   {
     key: '1',
     no: 'G151210309',
-    ad: 'Oğuzhan',
-    soyad: 'Kocabaş',
+    ad: 'Kemal',
+    soyad: 'Goz',
     gsm: null,
     eposta: null,
     durum: true,
